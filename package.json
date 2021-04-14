@@ -6,7 +6,12 @@
   "author": "Marco Combosch <marco.combosch@uni-ulm.de>",
   "license": "MIT",
   "scripts": {
-
+    "tsc": "tsc",
+    "start": "webpack --mode development --watch --progress",
+    "build": "webpack --mode production",
+    "php:analyse": "./vendor/bin/phpstan analyse --memory-limit=-1 -c phpstan.neon",
+    "wp:lang:build": "wp i18n make-pot . ./languages/wp-default-plugin.pot --domain='wp-default-plugin' --include='./dist/js,./plugin'",
+    "wp:lang:json": "wp i18n make-json ./languages"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
